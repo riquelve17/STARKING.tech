@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="STARKING.tech — Informática & Tecnologia. Acesse nossos canais oficiais, produtos e atendimento.">
+<title>STARKING.tech | Informática & Tecnologia</title>
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root{
+    --bg:#090909;
+    --card:#151515;
+    --card-hover:#202020;
+    --text:#fff;
+    --muted:#aaa;
+    --red:#ff1717;
+    --orange:#ff8a00;
+    --gold:#ffb300;
+    --border:rgba(255,140,0,.22);
+    --radius:18px;
+    --max:540px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+    min-height:100vh;
+    padding:28px 14px;
+    font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(circle at 50% -10%, rgba(255,94,0,.18), transparent 38%),
+      linear-gradient(180deg,#050505 0%,#101010 100%);
+}
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background-image:
+      radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:22px 22px;
+}
+.container{position:relative;width:100%;max-width:var(--max);margin:auto}
+.profile{text-align:center;margin-bottom:24px}
+.logo{
+    width:132px;height:132px;object-fit:cover;border-radius:50%;
+    border:3px solid #ff8a00;
+    box-shadow:0 0 0 5px rgba(255,130,0,.07),0 12px 40px rgba(0,0,0,.55);
+    background:#111;
+}
+.profile h1{
+    margin-top:15px;font-size:28px;letter-spacing:.3px;font-weight:800;
+}
+.badge{
+    display:inline-flex;align-items:center;gap:7px;
+    margin-top:8px;padding:7px 12px;border-radius:999px;
+    color:#ffb35b;background:rgba(255,112,0,.09);
+    border:1px solid rgba(255,130,0,.22);font-size:12px;font-weight:700;
+}
+.profile p{
+    margin:12px auto 0;max-width:430px;line-height:1.55;
+    color:#bdbdbd;font-size:14px;
+}
+.socials{display:flex;justify-content:center;gap:10px;margin-top:16px}
+.socials a{
+    width:42px;height:42px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;text-decoration:none;background:#151515;
+    border:1px solid #292929;transition:.25s;
+}
+.socials a:hover{transform:translateY(-3px);border-color:#ff6d00;background:#222}
+.links{display:flex;flex-direction:column;gap:12px}
+.link{
+    min-height:68px;width:100%;display:flex;align-items:center;
+    gap:13px;padding:11px 15px;text-decoration:none;color:#fff;
+    background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
+    border:1px solid var(--border);border-radius:var(--radius);
+    box-shadow:0 8px 25px rgba(0,0,0,.20);
+    transition:.25s ease;
+}
+.link:hover{
+    transform:translateY(-3px);background:var(--card-hover);
+    border-color:rgba(255,142,0,.65);
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+.icon{
+    width:44px;height:44px;min-width:44px;border-radius:13px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:20px;background:#202020;color:#ff8a00;
+}
+.content{flex:1}
+.title{display:block;font-size:15px;font-weight:800}
+.desc{display:block;margin-top:3px;color:#999;font-size:12px}
+.arrow{color:#777;transition:.25s}
+.link:hover .arrow{color:#ff9a00;transform:translateX(3px)}
+.featured{
+    background:linear-gradient(135deg,#ff1616,#d80707);
+    border-color:#ff3939;
+}
+.featured:hover{background:linear-gradient(135deg,#ff2929,#e50a0a);border-color:#ff5959}
+.featured .icon{background:rgba(255,255,255,.16);color:#fff}
+.featured .desc{color:rgba(255,255,255,.78)}
+.buy{
+    background:linear-gradient(135deg,#ff8a00,#ff5a00);
+    border-color:#ff9c2b;
+}
+.buy:hover{background:linear-gradient(135deg,#ff9d27,#ff6b12)}
+.buy .icon{background:rgba(0,0,0,.15);color:#fff}
+.buy .desc{color:rgba(255,255,255,.82)}
+.locations{
+    display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px
+}
+.location{
+    min-height:88px;padding:14px;text-decoration:none;color:#fff;
+    background:#151515;border:1px solid rgba(255,140,0,.2);
+    border-radius:16px;transition:.25s;
+}
+.location:hover{transform:translateY(-3px);border-color:#ff8a00;background:#1d1d1d}
+.location i{color:#ff8a00;font-size:18px}
+.location strong{display:block;margin-top:9px;font-size:13px}
+.location span{display:block;margin-top:3px;color:#888;font-size:11px}
+footer{text-align:center;margin-top:27px;padding-bottom:8px;color:#777;font-size:11px;line-height:1.6}
+footer .hours{font-size:12px;color:#aaa;margin-bottom:5px}
+footer i{color:#ff8a00}
+@media(max-width:430px){
+    body{padding:20px 11px}
+    .logo{width:115px;height:115px}
+    .profile h1{font-size:24px}
+    .locations{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<main class="container">
+
+<section class="profile">
+    <img src="logo.png" class="logo" alt="Logo STARKING.tech">
+    <h1>STARKING.tech</h1>
+
+    <div class="badge">
+        <i class="fa-solid fa-microchip"></i>
+        INFORMÁTICA & TECNOLOGIA
+    </div>
+
+    <p>
+        Produtos, tecnologia e soluções em informática.
+        Fale conosco, confira nossas ofertas e acompanhe nossas redes oficiais.
+    </p>
+
+    <div class="socials">
+        <a href="https://www.instagram.com/starking.tech?stkn=MTk1MGhkZmowNHRwYw==" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/@vilaox17?_r=1&_t=ZS-99th4HS8KG4" target="_blank" rel="noopener" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://wa.me/5598984676808" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+</section>
+
+<section class="links">
+
+    <a class="link featured" href="https://wa.me/5598984676808" target="_blank" rel="noopener">
+        <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="content">
+            <span class="title">WhatsApp — Atendimento</span>
+            <span class="desc">Fale diretamente com a STARKING.tech</span>
+        </div>
+        <i class="fa-solid fa-arrow-right arrow"></i>
+    </a>
+
+    <a class="link buy" href="https://www.mercadolivre.com.br/social/riquelvex17" target="_blank" rel="noopener">
+        <div class="icon"><i class="fa-solid fa-cart-shopping"></i></div>
+        <div class="content">
+            <span class="title">Comprar agora</span>
+            <span class="desc">Veja nossos produtos no Mercado Livre</span>
+        </div>
+        <i class="fa-solid fa-arrow-right arrow"></i>
+    </a>
+
+    <a class="link" href="https://www.instagram.com/starking.tech?stkn=MTk1MGhkZmowNHRwYw==" target="_blank" rel="noopener">
+        <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+        <div class="content">
+            <span class="title">Instagram</span>
+            <span class="desc">Acompanhe novidades, produtos e ofertas</span>
+        </div>
+        <i class="fa-solid fa-arrow-right arrow"></i>
+    </a>
+
+    <a class="link" href="https://www.tiktok.com/@vilaox17?_r=1&_t=ZS-99th4HS8KG4" target="_blank" rel="noopener">
+        <div class="icon"><i class="fa-brands fa-tiktok"></i></div>
+        <div class="content">
+            <span class="title">TikTok</span>
+            <span class="desc">Confira nossos vídeos e conteúdos</span>
+        </div>
+        <i class="fa-solid fa-arrow-right arrow"></i>
+    </a>
+
+    <a class="link" href="mailto:informaticaetecnologiastarking@gmail.com">
+        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+        <div class="content">
+            <span class="title">E-mail</span>
+            <span class="desc">informaticaetecnologiastarking@gmail.com</span>
+        </div>
+        <i class="fa-solid fa-arrow-right arrow"></i>
+    </a>
+
+</section>
+
+<section class="locations">
+    <a class="location" href="https://www.google.com/maps/search/?api=1&query=Goiania%2C+Goias" target="_blank" rel="noopener">
+        <i class="fa-solid fa-location-dot"></i>
+        <strong>Goiânia — GO</strong>
+        <span>Ver localização no Google Maps</span>
+    </a>
+
+    <a class="location" href="https://www.google.com/maps/search/?api=1&query=Sao+Luis%2C+Maranhao" target="_blank" rel="noopener">
+        <i class="fa-solid fa-location-dot"></i>
+        <strong>São Luís — MA</strong>
+        <span>Ver localização no Google Maps</span>
+    </a>
+</section>
+
+<footer>
+    <div class="hours"><i class="fa-regular fa-clock"></i> Atendimento comercial: consulte pelo WhatsApp</div>
+    <div>© 2026 STARKING.tech — Informática & Tecnologia</div>
+</footer>
+
+</main>
+</body>
+</html>
